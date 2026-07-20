@@ -3,20 +3,12 @@ package com.settle.pg;
 import java.io.ByteArrayOutputStream;
 import java.io.DataInputStream;
 import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
-import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
-import java.security.cert.CertificateException;
-import java.security.cert.X509Certificate;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.net.ssl.HostnameVerifier;
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
-import javax.net.ssl.SSLSession;
-import javax.net.ssl.TrustManager;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -41,27 +33,11 @@ public class HttpClientUtil {
 		
 		String sendData = "";
 		String resData = "";
-		
+
 		try {
-			TrustManager[] trustAllCerts = new TrustManager[] { new javax.net.ssl.X509TrustManager() {
-				public void checkClientTrusted(X509Certificate[] chain, String authType) throws CertificateException {}
-				public void checkServerTrusted(X509Certificate[] chain, String authType) throws CertificateException {}
-				public X509Certificate[] getAcceptedIssuers() {return null;}
-				
-			}};
-			
 			SSLContext sc = SSLContext.getInstance("TLS");
-			sc.init(null, trustAllCerts, new java.security.SecureRandom());
-			
-			HttpsURLConnection.setDefaultSSLSocketFactory(sc.getSocketFactory());
-			
-			HostnameVerifier allHostsValid = new HostnameVerifier() {
-				public boolean verify(String hostname, SSLSession session) {
-					return true;
-				}
-			};
-			
-			HttpsURLConnection.setDefaultHostnameVerifier(allHostsValid);
+			// null TrustManager: JRE 기본 신뢰 저장소와 인증서 체인 검증을 사용합니다.
+			sc.init(null, null, null);
 			
 			URL url = new URL( targetUrl );
 			
@@ -69,6 +45,8 @@ public class HttpClientUtil {
 			logger.info("["+trdNo+"][URL Protocol]" + url.getProtocol() + " [Connect Timeout]"+connTimeout +" [Read Timeout]" + readTimeout);
 			
 			httpsURLConnection = (HttpsURLConnection)url.openConnection();
+			httpsURLConnection.setSSLSocketFactory(
+					new Tls12OrHigherSocketFactory(sc.getSocketFactory()));
 			httpsURLConnection.setDoInput(true);
 			httpsURLConnection.setDoOutput(true);
 			httpsURLConnection.setRequestProperty("Content-Type", "application/json");
