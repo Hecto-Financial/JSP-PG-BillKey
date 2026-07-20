@@ -10,6 +10,7 @@
 <%@ page import="java.net.URLDecoder"%>
 <%@ page import="net.sf.json.JSONObject"%>
 <%@ include file="config.jsp" %>
+<%@ include file="escapeUtil.jsp" %>
 <% request.setCharacterEncoding("UTF-8");%>
 <%
 //로거 얻기
@@ -218,70 +219,70 @@ try{
 	</tr>
     <tr>
         <td>mchtId[상점아이디]</td>
-        <td><%= respParam.get("mchtId") %></td>
+        <td><%= escapeHtml(respParam.get("mchtId")) %></td>
     </tr>
     <tr>
         <td>ver[버전]</td>
-        <td><%= respParam.get("ver") %></td>
+        <td><%= escapeHtml(respParam.get("ver")) %></td>
     </tr>
     <tr>
         <td>method[결제수단]</td>
-        <td><%= respParam.get("method") %></td>
+        <td><%= escapeHtml(respParam.get("method")) %></td>
     </tr>
     <tr>
         <td>bizType[업무구분]</td>
-        <td><%= respParam.get("bizType") %></td>
+        <td><%= escapeHtml(respParam.get("bizType")) %></td>
     </tr>
     <tr>
         <td>encCd[암호화구분]</td>
-        <td><%= respParam.get("encCd") %></td>
+        <td><%= escapeHtml(respParam.get("encCd")) %></td>
     </tr>
     <tr>
         <td>mchtTrdNo[상점주문번호]</td>
-        <td><%= respParam.get("mchtTrdNo") %></td>
+        <td><%= escapeHtml(respParam.get("mchtTrdNo")) %></td>
     </tr>
     <tr>
         <td>trdNo[헥토파이낸셜 거래번호]</td>
-        <td><%= respParam.get("trdNo") %></td>
+        <td><%= escapeHtml(respParam.get("trdNo")) %></td>
     </tr>
     <tr>
         <td>trdDt[취소요청일자]</td>
-        <td><%= respParam.get("trdDt") %></td>
+        <td><%= escapeHtml(respParam.get("trdDt")) %></td>
     </tr>
     <tr>
         <td>trdTm[취소요청시간]</td>
-        <td><%= respParam.get("trdTm") %></td>
+        <td><%= escapeHtml(respParam.get("trdTm")) %></td>
     </tr>
     <tr>
         <td>outStatCd[거래상태코드]</td>
-        <td><%= respParam.get("outStatCd") %></td>
+        <td><%= escapeHtml(respParam.get("outStatCd")) %></td>
     </tr>
     <tr>
         <td>outRsltCd[거래결과코드]</td>
-        <td><%= respParam.get("outRsltCd") %></td>
+        <td><%= escapeHtml(respParam.get("outRsltCd")) %></td>
     </tr>
     <tr>
         <td>outRsltMsg[결과메세지]</td>
-        <td><%= respParam.get("outRsltMsg") %></td>
+        <td><%= escapeHtml(respParam.get("outRsltMsg")) %></td>
     </tr>
     <tr>
         <td colspan="2" style="text-align: center;"><h4>data</h4></td>
     </tr>
     <tr>
         <td>pktHash[해쉬값]</td>
-        <td><%= respParam.get("pktHash") %></td>
+        <td><%= escapeHtml(respParam.get("pktHash")) %></td>
     </tr>
     <tr>
         <td>orgTrdNo[원거래번호]</td>
-        <td><%= respParam.get("orgTrdNo") %></td>
+        <td><%= escapeHtml(respParam.get("orgTrdNo")) %></td>
     </tr>
     <tr>
         <td>cnclAmt[취소금액]</td>
-        <td><%= respParam.get("cnclAmt") %></td>
+        <td><%= escapeHtml(respParam.get("cnclAmt")) %></td>
     </tr>
     <tr>
         <td>blcAmt[취소가능잔액]</td> 
-        <td><%= respParam.get("blcAmt") %></td>
+        <td><%= escapeHtml(respParam.get("blcAmt")) %></td>
     </tr>
     <tr>
         <td colspan="2" style="text-align: center;"><input style="margin-top:20px;" type="button" value="돌아가기" onclick="location.href='cancel_form.jsp'"></td>
