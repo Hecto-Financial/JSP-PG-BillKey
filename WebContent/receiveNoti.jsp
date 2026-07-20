@@ -98,8 +98,8 @@ noti.add("취소거래타입:"+ cnclType);
 noti.add("기타주문정보:"+ mchtParam);
 noti.add("해쉬값:"+ pktHash); //서버에서 전달된 해쉬 값
 
-/** 해쉬 조합 필드 
- *  결과코드 + 거래일시 + 상점아이디 + 가맹점거래번호 + 거래금액 + 라이센스키 */
+/** 해쉬 조합 필드
+ *  결과코드 + 거래일시 + 상점아이디 + 가맹점거래번호 + 거래금액(평문) + 라이센스키 */
 String hashPlain = String.format("%s%s%s%s%s%s", outStatCd, trdDtm, mchtId, mchtTrdNo, trdAmt, licenseKey);
 String hashCipher ="";
 
