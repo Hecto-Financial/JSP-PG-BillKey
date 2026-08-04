@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>S'Pay</title>
+<title>헥토파이낸셜</title>
 <style>
 #info	                				{display:flex; font-family:굴림; font-size:10pt; line-height: 20%;}
 #info > div > p	                		{font-size:13pt;}

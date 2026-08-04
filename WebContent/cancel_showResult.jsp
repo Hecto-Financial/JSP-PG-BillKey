@@ -204,7 +204,7 @@ try{
 <html>
 <head>
 <meta charset="UTF-8">
-<title>S'Pay</title>
+<title>헥토파이낸셜</title>
 <style type="text/css">
 #STPG_RSLT		{font-family:굴림; font-size:10pt;}
 #STPG_RSLT h4	{background-color:#f1f1f1;padding:4px;margin:2px;}
