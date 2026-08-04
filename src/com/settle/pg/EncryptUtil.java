@@ -19,7 +19,7 @@ public class EncryptUtil {
 		
 		try {
 			// AES256 Encrypt -> Base64 Encode
-			encrypt = aes256EncryptEcb("pgSettle30y739r82jtd709yOfZ2yK5K", "세틀뱅크");
+			encrypt = aes256EncryptEcb("pgSettle30y739r82jtd709yOfZ2yK5K", "헥토파이낸셜");
 			resultStr = encodeBase64(encrypt);
 			System.out.println("encrypt aes256 result:" + resultStr);
 	
