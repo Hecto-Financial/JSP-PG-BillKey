@@ -118,7 +118,11 @@ try{
     그러므로 hash 오류건에 대해서는 오류 발생시 원인을 파악하여 즉시 수정 및 대처해 주셔야 합니다. 
     그리고 정상적으로 데이터를 처리한 경우에도 헥토파이낸셜에서 응답을 받지 못한 경우는 결제결과가 중복해서 나갈 수 있으므로 관련한 처리도 고려되어야 합니다
 */
-if (hashCipher.equals(pktHash)) {
+/* 해시 비교는 상수 시간 비교를 사용합니다.
+   String.equals는 처음 다른 문자에서 즉시 끝나 비교에 걸린 시간이
+   "몇 글자까지 맞았는지"를 노출합니다. 노티 수신 주소는 외부에 공개되어야
+   하므로 측정 가능한 표면입니다. */
+if (MessageDigest.isEqual(hashCipher.getBytes("UTF-8"), pktHash.getBytes("UTF-8"))) {
     notiLogger.info("["+ mchtTrdNo + "][SHA256 Hash Check] hashCipher[" + hashCipher + "] pktHash[" + pktHash + "] equals?[TRUE]");
     if ("0021".equals(outStatCd)){
         notiLogger.info("["+ mchtTrdNo + "][Success] params:" + String.join("|", noti));
