@@ -87,7 +87,7 @@ function doAction(){
 <h3>전자결제(PG) 신용카드 빌키 발급 API</h3>
 <p>
 	<b>신용카드 빌키 발급 API</b> : 결제 하지 않고 빌키 발급<br>
-	빌키가 발급되지 않을시 문의 주십시오. <b>settle_fintech@hecto.co.kr</b><br>
+	빌키가 발급되지 않을시 문의 주십시오. <b>pgsupport@hecto.co.kr</b><br>
 </p>
 
 <div>
