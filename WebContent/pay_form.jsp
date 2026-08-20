@@ -75,7 +75,7 @@ function doAction(){
 		</div>
 	</div>
 </div>
-<p id="lightGray">빌키가 발급되지 않을시 문의 주십시오. <b>pgsupport@hecto.co.kr</b></p>
+<p id="lightGray">빌키가 발급되지 않을시 문의 주십시오. 문의처는 README를 참고하십시오.</p>
 
 <form id="STPG_payForm" name="STPG_payForm" >
 
