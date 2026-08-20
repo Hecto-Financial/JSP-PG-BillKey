@@ -75,12 +75,14 @@ function doAction(){
 		<p><a href="authAPI_form.jsp" style="text-decoration:none;">[빌키 발급 API]</a></p>
 		<p><a href="pay_form.jsp" style="text-decoration:none;">[결제 API(빌키 발급 포함)]</a><p></p>
 		<p><a href="billKey_form.jsp" style="text-decoration:none;">[빌키 결제 API]</a></p>
+		<p><a href="delKey_form.jsp" style="text-decoration:none;">[빌키 삭제 API]</a></p>
 		<p><a href="cancel_form.jsp" style="text-decoration:none;">[취소 API]</a></p>
 	</div>
 	<div id = "infoChild">
 		<p>:&nbsp;&nbsp;결제 하지 않고 빌키 발급</p>
 		<p>:&nbsp;&nbsp;결제 후 상점 아이디 설정에 따라 빌키 발급</p>
 		<p>:&nbsp;&nbsp;발급 받은 빌키로 정기 결제</p>
+		<p>:&nbsp;&nbsp;발급 받은 빌키 삭제</p>
 		<p>:&nbsp;&nbsp;결제된 거래 건 취소</p>
 	</div>
 </div>
